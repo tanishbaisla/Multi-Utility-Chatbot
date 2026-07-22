@@ -15,11 +15,14 @@ Features
 🔄 Provider-agnostic — runs fully local with Ollama, or with Gemini/OpenAI APIs
 
 Architecture
+
 <img width="826" height="381" alt="image" src="https://github.com/user-attachments/assets/01f53475-3ad9-49c6-928d-396e64a2cf3a" />
 
 
 
-RAG pipeline: PDF → PyPDFLoader → RecursiveCharacterTextSplitter (1000 chars, 200 overlap) → embeddings → FAISS vector store → similarity retrieval (top-k=4) → context injected into the LLM prompt.
+RAG pipeline: 
+
+PDF → PyPDFLoader → RecursiveCharacterTextSplitter (1000 chars, 200 overlap) → embeddings → FAISS vector store → similarity retrieval (top-k=4) → context injected into the LLM prompt.
 
 Tech Stack
 Layer	Technology
