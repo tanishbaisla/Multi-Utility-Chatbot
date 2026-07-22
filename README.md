@@ -13,20 +13,11 @@ Features
 🏷️ Auto-generated titles — LLM names each conversation from the first message
 🗑️ Delete conversations — remove threads from memory, ChatGPT-style
 🔄 Provider-agnostic — runs fully local with Ollama, or with Gemini/OpenAI APIs
+
 Architecture
-User question
-     ↓
-LangGraph agent (chat_node)
-     ↓
-Does it need a tool? ──No──→ Answer from LLM knowledge
-     ↓ Yes
-┌────────────┬──────────────┬─────────────┬──────────────┐
-│  rag_tool  │ search_tool  │ calculator  │ stock_price  │
-│ (FAISS +   │ (DuckDuckGo) │             │ (AlphaVantage│
-│ embeddings)│              │             │              │
-└────────────┴──────────────┴─────────────┴──────────────┘
-     ↓
-Tool result returned to agent → final answer (streamed to UI)
+<img width="826" height="381" alt="image" src="https://github.com/user-attachments/assets/01f53475-3ad9-49c6-928d-396e64a2cf3a" />
+
+
 
 RAG pipeline: PDF → PyPDFLoader → RecursiveCharacterTextSplitter (1000 chars, 200 overlap) → embeddings → FAISS vector store → similarity retrieval (top-k=4) → context injected into the LLM prompt.
 
