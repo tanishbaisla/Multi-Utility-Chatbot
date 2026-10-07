@@ -1,1 +1,8 @@
-
+.env
+venv/
+__pycache__/
+chatbot.db
+chatbot.db-wal
+chatbot.db-shm
+faiss_indexes/
+.pytest_cache/
